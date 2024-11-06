@@ -43,11 +43,11 @@ label start:
 label game:
 
     if player == 1:
-        $ url = "https://discord.com/api/webhooks/(WebhookID1)"
+        $ url = 'https://discord.com/api/webhooks/(WebhookID1)'
     elif player == 2:
-        $ url = "https://discord.com/api/webhooks/(WebhookID2)"
+        $ url = 'https://discord.com/api/webhooks/(WebhookID2)'
     elif player == 3:
-        $ url = "https://discord.com/api/webhooks/(WebhookID3)"
+        $ url = 'https://discord.com/api/webhooks/(WebhookID3)'
 
 ## Add as much webhooks as you want ^ 
 
@@ -55,11 +55,11 @@ label game:
 ## Message sending the username and the score of the player
     $ message = persistent.username + " : " + str(score)
 
-## The channel where the webhooks will send their messages
-    $ channel_id = '[channel_id]'
+## The channel where the webhooks will send their messages (change the parentheses)
+    $ channel_id = '(channel_id)'
 
-## The authentification token needed to receive the messages
-    $ auth_token = '[authentification token]'
+## The authentification token needed to receive the messages (change the parentheses)
+    $ auth_token = '(authentification token)'
 
 
 ## Sending, receiving and clearing old messages
@@ -67,7 +67,7 @@ label game:
         import requests
 
         def send_message(url, message):
-            requests.post(url, data={"content": message})
+            requests.post(url, data={'content': message})
 
         def retrieve_messages(channel_id, auth_token):
             headers = {
